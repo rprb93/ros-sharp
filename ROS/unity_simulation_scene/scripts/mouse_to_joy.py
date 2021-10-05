@@ -24,7 +24,7 @@ def mouseToJoy():
 	rospy.init_node('mouseToJoy', anonymous = True)
 
 	#### Setup MouseToJoy Publisher 
-   	mouseToJoyPublisher = rospy.Publisher("joy", Joy, queue_size = 5)
+	mouseToJoyPublisher = rospy.Publisher("joy", Joy, queue_size = 5)
 	rate = rospy.Rate(10) # 10hz
 	msg = Joy()
 	

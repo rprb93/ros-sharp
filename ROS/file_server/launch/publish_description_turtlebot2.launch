@@ -19,12 +19,16 @@ limitations under the License.
 		<arg name="port" value="9090" />
 	</include>
 
-	<arg name="base" default="$(env TURTLEBOT_BASE)" />
-	<arg name="stacks" default="$(env TURTLEBOT_STACKS)" />
-	<arg name="3d_sensor" default="$(env TURTLEBOT_3D_SENSOR)" />
-	<arg name="urdf_file" default="$(find xacro)/xacro.py '$(find turtlebot_description)/robots/$(arg base)_$(arg stacks)_$(arg 3d_sensor).urdf.xacro'" />
+	<!-- <arg name="base" default="$(env TURTLEBOT_BASE)" /> -->
+	<!-- <arg name="stacks" default="$(env TURTLEBOT_STACKS)" /> -->
+	<!-- <arg name="3d_sensor" default="$(env TURTLEBOT_3D_SENSOR)" /> -->
+    <!-- <arg name="urdf_file" default="$(find xacro)/xacro '$(find turtlebot3_description)/urdf/turtlebot3_burger.urdf.xacro'" /> -->
+	<!-- <arg name="urdf_file" default="$(find xacro)/xacro '$(find velodyne_description)/urdf/VLP-16.urdf.xacro'" /> -->
+	<arg name="urdf_file" default="$(find xacro)/xacro '$(find miniq_description)/urdf/miniq.urdf.xacro'" />
+
+
 	
-	<param name="robot/name" value="Turtlebot2" />
+	<param name="robot/name" value="MiniQ" />
 	<param name="robot_description" command="$(arg urdf_file)" />
 
 </launch>
