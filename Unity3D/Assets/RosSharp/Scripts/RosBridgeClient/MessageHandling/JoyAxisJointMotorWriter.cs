@@ -20,8 +20,6 @@ namespace RosSharp.RosBridgeClient
     [RequireComponent(typeof(HingeJoint))]
     public class JoyAxisJointMotorWriter : JoyAxisWriter
     {
-        public float MaxVelocity;
-
         private HingeJoint _hingeJoint;
         private JointMotor jointMotor;
         private float targetVelocity;
@@ -43,13 +41,14 @@ namespace RosSharp.RosBridgeClient
         {
             jointMotor = _hingeJoint.motor;
             jointMotor.targetVelocity = targetVelocity;
+            jointMotor.force = 1;
             _hingeJoint.motor = jointMotor;
             isMessageReceived = false;
         }
 
         public override void Write(float value)
         {
-            targetVelocity = value * MaxVelocity;
+            targetVelocity = value;
             isMessageReceived = true;
         }
     }

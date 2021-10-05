@@ -12,6 +12,10 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
+// using System;
+// using System.Threading;
+// using RosSharp.RosBridgeClient.Protocols;
+using UnityEngine;
 
 namespace RosSharp.RosBridgeClient
 {
@@ -33,9 +37,13 @@ namespace RosSharp.RosBridgeClient
                     joyButtonWriters[i].Write(joy.buttons[i]);
 
             I = joyAxisWriters.Length < joy.axes.Length ? joyAxisWriters.Length : joy.axes.Length;
-            for (int i = 0; i < I; i++)
-                if (joyAxisWriters[i] != null)
+            
+            for (int i = 0; i < I; i++){
+                if (joyAxisWriters[i] != null){
                     joyAxisWriters[i].Write(joy.axes[i]);
+                }
+            }
+
         }
     }
 }
