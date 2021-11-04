@@ -1,0 +1,11 @@
+._*
+.DS_Store
+*~
+*.pcd
+*.pyc
+*.user
+*.gz
+CATKIN_IGNORE
+*/CATKIN_IGNORE
+*/*/CATKIN_IGNORE
+*/*/*/CATKIN_IGNORE
