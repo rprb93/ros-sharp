@@ -24,11 +24,10 @@ limitations under the License.
 	<!-- <arg name="3d_sensor" default="$(env TURTLEBOT_3D_SENSOR)" /> -->
     <!-- <arg name="urdf_file" default="$(find xacro)/xacro '$(find turtlebot3_description)/urdf/turtlebot3_burger.urdf.xacro'" /> -->
 	<!-- <arg name="urdf_file" default="$(find xacro)/xacro '$(find velodyne_description)/urdf/VLP-16.urdf.xacro'" /> -->
-	<arg name="urdf_file" default="$(find xacro)/xacro '$(find miniq_description)/urdf/miniq.urdf.xacro'" />
-
-
+	<!-- <arg name="urdf_file" default="$(find xacro)/xacro /home/rprb/catkin_ws/src/URDF/miniq_description/urdf/miniq.urdf.xacro" /> -->
+	<arg name="urdf_file" default="$(find xacro)/xacro '$(find asv_urdf_description)/urdf/asv_urdf.xacro'" /> 
 	
-	<param name="robot/name" value="MiniQ" />
+	<param name="robot/name" value="ASV" />
 	<param name="robot_description" command="$(arg urdf_file)" />
 
 </launch>
